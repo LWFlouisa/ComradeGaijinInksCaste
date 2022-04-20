@@ -1,2 +1,2 @@
-# ComradeGaijinInksCaste
-Podcast for Comrade Gaijin Inks.
+# ComradeGaijinCaste
+Podcast for Comrade Gaijin.

@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Comrade Gaijin</title>
+<script type="text/javascript">
+function init()
+{
+    document.addEventListener('click', function(evt) { if (evt.target.tagName.toLowerCase() == 'li') { play(evt.target); } }, false);
+}
+
+function skip()
+{
+}
+
+function play(elem)
+{
+    var audio = document.getElementById('audio');
+    audio.src = elem.textContent + '.mp3';
+    audio.play();
+    elem.className = 'playing';
+    skip = function()
+    {
+            elem.className = '';
+            if (elem.nextElementSibling)
+            {
+                play(elem.nextElementSibling);
+            }
+    }
+}
+</script>
+    
+<style>
+    body {
+        background-color: #111e49;
+    }
+    
+    h1, h2, h3, h4, h5, h6, p, pre {
+        color: #004773;
+    }
+    
+    a {
+        color: #c70025;
+    }
+    
+    ol, ul, li {
+        color: #c70025;
+    }
+    
+    div.content { width: 85% }
+</style>
+    
+<style type="text/css">
+li:hover { text-decoration: underline; }
+li.playing { font-weight: bold; }
+</style>
+
+</head>
+<body onload="init()">
+  <div class="content">
+    <center><img src="" width="33%"></center>
+    <h1>Comrade Gaijin Inks</h1>
+    <p>[ <a href="https://pawoo.net/web/accounts/1287123">Pawoo</a> | <a href="https://kolektiva.social/web/@LWFlouisa">LWFlouisa</a> ]</p>
+  
+    <audio id="audio" controls="controls" onerror="alert('Could not play MP3 audio file ' + this.src + '!');" onended="skip()">HTML5 MP3 audio required (Chrome, Safari, IE 9?)</audio>
+    
+    <h3>Early Channel Archive</h3>
+    <ul>
+      <li>placeholder</li>
+    </ul>
+  </div>
+</body>
+</html>
